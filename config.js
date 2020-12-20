@@ -49,7 +49,7 @@ const config = {
     title: 'TypeScript',
     description: 'The TypeScript Handbook',
     ogImage: null,
-    docsLocation: 'https://github.com/Huauauaa/typescript-reference/content',
+    docsLocation: 'https://github.com/Huauauaa/typescript-reference/tree/master/content',
     favicon: 'https://www.typescriptlang.org/favicon-32x32.png?v=8944a05a8b601855de116c8a56d3b3ae',
   },
   pwa: {
