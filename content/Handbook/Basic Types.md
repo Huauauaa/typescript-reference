@@ -4,9 +4,7 @@ metaTitle: 'Basic Types'
 metaDescription: 'Basic Types'
 ---
 
-## Basic Types
-
-### Boolean
+## Boolean
 
 The most basic datatype is the simple true/false value, which JavaScript and TypeScript call a `boolean` value.
 
@@ -14,7 +12,7 @@ The most basic datatype is the simple true/false value, which JavaScript and Typ
 let isDone: boolean = false;
 ```
 
-### Number
+## Number
 
 As in JavaScript, all numbers in TypeScript are either floating point values or BigIntegers. These floating point numbers get the type `number`, while BigIntegers get the type `bigint`. In addition to hexadecimal and decimal literals, TypeScript also supports binary and octal literals introduced in ECMAScript 2015.
 
@@ -26,7 +24,7 @@ let octal: number = 0o744;
 let big: bigint = 100n;
 ```
 
-### String
+## String
 
 Another fundamental part of creating programs in JavaScript for webpages and servers alike is working with textual data. As in other languages, we use the type `string` to refer to these textual datatypes. Just like JavaScript, TypeScript also uses double quotes (") or single quotes (') to surround string data.
 
@@ -52,7 +50,7 @@ let sentence: string =
   'Hello, my name is ' + fullName + '.\n\n' + "I'll be " + (age + 1) + ' years old next month.';
 ```
 
-### Array
+## Array
 
 TypeScript, like JavaScript, allows you to work with arrays of values. Array types can be written in one of two ways. In the first, you use the type of the elements followed by `[]` to denote an array of that element type:
 
@@ -66,7 +64,7 @@ The second way uses a generic array type, `Array<elemType>`:
 let list: Array<number> = [1, 2, 3];
 ```
 
-### Tuple
+## Tuple
 
 Tuple types allow you to express an array with a fixed number of elements whose types are known, but need not be the same. For example, you may want to represent a value as a pair of a `string` and a `number`:
 
@@ -102,7 +100,7 @@ console.log(x[5].toString());
 // Tuple type '[string, number]' of length '2' has no element at index '5'.
 ```
 
-### Enum
+## Enum
 
 A helpful addition to the standard set of datatypes from JavaScript is the `enum`. As in languages like C#, an enum is a way of giving more friendly names to sets of numeric values.
 
@@ -151,7 +149,7 @@ let colorName: string = Color[2];
 console.log(colorName);
 ```
 
-### Unknown
+## Unknown
 
 We may need to describe the type of variables that we do not know when we are writing an application. These values may come from dynamic content – e.g. from the user – or we may want to intentionally accept all values in our API. In these cases, we want to provide a type that tells the compiler and future readers that this variable could be anything, so we give it the `unknown` type.
 
@@ -188,7 +186,7 @@ if (typeof maybe === 'string') {
 }
 ```
 
-### Any
+## Any
 
 In some situations, not all type information is available or its declaration would take an inappropriate amount of effort. These may occur for values from code that has been written without TypeScript or a 3rd party library. In these cases, we might want to opt-out of type checking. To do so, we label these values with the `any` type:
 
@@ -224,7 +222,7 @@ let d = looselyTyped.a.b.c.d;
 
 After all, remember that all the convenience of `any` comes at the cost of losing type safety. Type safety is one of the main motivations for using TypeScript and you should try to avoid using `any` when not necessary.
 
-### Void
+## Void
 
 `void` is a little like the opposite of `any`: the absence of having any type at all. You may commonly see this as the return type of functions that do not return a value:
 
@@ -242,7 +240,7 @@ let unusable: void = undefined;
 unusable = null;
 ```
 
-### Null and Undefined
+## Null and Undefined
 
 In TypeScript, both `undefined` and `null` actually have their types named `undefined` and `null` respectively. Much like `void`, they’re not extremely useful on their own:
 
@@ -260,7 +258,7 @@ Union types are an advanced topic that we’ll cover in a later chapter.
 
 > As a note: we encourage the use of `--strictNullChecks` when possible, but for the purposes of this handbook, we will assume it is turned off.
 
-### Never
+## Never
 
 The `never` type represents the type of values that never occur. For instance, `never` is the return type for a function expression or an arrow function expression that always throws an exception or one that never returns. Variables also acquire the type `never` when narrowed by any type guards that can never be true.
 
@@ -285,7 +283,7 @@ function infiniteLoop(): never {
 }
 ```
 
-### Object
+## Object
 
 `object` is a type that represents the non-primitive type, i.e. anything that is not `number`, `string`, `boolean`, `bigint`, `symbol`, `null`, or `undefined`.
 
@@ -308,7 +306,7 @@ create(undefined);
 // Argument of type 'undefined' is not assignable to parameter of type 'object | null'.Argument of type 'undefined' is not assignable to parameter of type 'object | null'
 ```
 
-### Type assertions
+## Type assertions
 
 _Type assertions_ are a way to tell the compiler “trust me, I know what I’m doing.” A type assertion is like a type cast in other languages, but it performs no special checking or restructuring of data. It has no runtime impact and is used purely by the compiler. TypeScript assumes that you, the programmer, have performed any special checks that you need.
 
@@ -332,7 +330,7 @@ let strLength: number = (<string>someValue).length;
 
 The two samples are equivalent. Using one over the other is mostly a choice of preference; however, when using TypeScript with JSX, only `as`-style assertions are allowed.
 
-### About `Number`, `String`, `Boolean`, `Symbol` and `Object`
+## About `Number`, `String`, `Boolean`, `Symbol` and `Object`
 
 It can be tempting to think that the types `Number`, `String`, `Boolean`, `Symbol`, or `Object` are the same as the lowercase versions recommended above. These types do not refer to the language primitives however, and almost never should be used as a type.
 
