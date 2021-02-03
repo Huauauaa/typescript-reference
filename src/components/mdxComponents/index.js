@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/heading-has-content */
+/* eslint-disable react/display-name */
 import React from 'react';
 import styled from '@emotion/styled';
 
@@ -22,6 +24,9 @@ function getId(props) {
       .join('')
       .replace(/\s+/g, '')
       .toLowerCase();
+  }
+  if (props.children.props) {
+    return props.children.props.children.replace(/\s+/g, '').toLowerCase();
   }
   return props.children.replace(/\s+/g, '').toLowerCase();
 }
